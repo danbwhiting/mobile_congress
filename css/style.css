@@ -1,0 +1,114 @@
+body {
+	font-family: "Lato", sans-serif;
+	color: white;
+	background-color: rgba(75,136,203,1);
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+h1 {
+	font-weight: 100;
+	text-align: center;
+	margin-top: 5px;
+}
+
+select {
+	width: 80%;
+	height: 100px;
+	font-family: "Lato", sans-serif;
+}
+ 
+/*div {
+	border: 1px solid white;
+}*/
+
+.main_body {
+	width: 960px;
+	height: 600px;
+	border: 1px solid white;
+	margin: 0 auto;
+}
+
+.container {
+	border: none;
+}
+
+
+/* Additional styles*/
+
+
+.api_image {
+	padding: 5px;
+}
+
+.title {
+	margin: 0 auto;
+	height: auto;
+	width: auto;
+}
+
+.contact_info {
+	float: right;
+	padding: 5px;
+	font-weight: 100;
+}
+
+.space_between_title_search {
+	height: 40px;
+}
+
+.spacer {
+	height: 50px;
+}
+
+.chamber_button {
+	display: inline-block;
+}
+
+.nav_button {
+	color: white;
+	padding: 5px;
+}
+
+.contact_info {
+	font-size: 1rem;
+}
+
+#initial_info {
+	visibility: hidden;
+}
+
+#page2 {
+	display: none;
+}
+
+#page3 {
+	display: none;
+}
+
+#page4 {
+	display: none;
+}
+
+#page5 {
+	display: none;
+}
+
+#page6 {
+	display: none;
+}
+
+#page7 {
+	display: none;
+}
+
+#page8 {
+	display: none;
+}
+/* Phones */
+
+@media screen and (max-width: 520px) {
+	.container {
+		border: none;
+	}
+}

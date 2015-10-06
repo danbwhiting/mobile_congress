@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Congressional Directory">
+    	<meta name="keywords" content"congress, congressional, directory, information, contact information, contact info">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Congressional Directory</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		
+		<!--Lato font-->
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+		<!--Internal stylesheet-->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+		<!--Bootstrap-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="row"> <!--Header-->
+					  <div class="col-xs-12 col-sm-12 col-md-12"><h1>Congressional Directory</h1></div>
+				</div>
+			</div>
+		</header>
+		<div class="container" id="input_screen">
+
+			<div class="row"> <!--white space-->
+				<div class="col-xs-12 col-sm-12 col-md-12 space_between_title_search"></div>
+			</div>
+		  	<div class="row"> <!--Chamber selector-->
+		  		<div class="col-xs-offset-6 col-sm-offset-8 col-md-offset-6">
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-default" id="house_button">House</button>
+					  <button type="button" class="btn btn-primary" id="senate_button">Senate</button>
+					</div>
+	  			</div>
+	  		</div> <!--End of chamber buttons-->
+	  		<div class="row">
+	  			<div class="spacer"></div>
+  			</div>
+	  		<div class="row"> <!--Search bar-->
+				<div class="col-xs-offset-4 col-sm-offset-6 col-md-offset-8">
+					<select id="member_selector">
+						<option>Select a Senator</option>
+						<option value="A000360">Alexander - TN</option>
+						<option value="C000880">Crapo - ID</option> 
+						<option value="R000584">Risch - ID</option>
+						<option value="M000303">McCain - ID</option>
+					</select>
+				</div>
+		  	</div>
+	  	</div>
+  		<div class="container" id="initial_info">
+  			<div class="row">
+  				<div class="col-xs-12">
+  					<div id="memberName"></div>
+  					<div id="memberDCOffice"></div>
+  					<div id="memberDCPhone"></div>
+					<div id="memberWebsite"></div>
+  					<div id="memberTwitter"></div>
+  					<div id="memberFacebook"></div>
+				</div>
+				<div class="col-xs-offset-6">
+					<a href="#" class="nav_button" id="page1Arrow"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+				</div>
+			</div>	
+		</div> <!--End of initial screen more info-->
+
+		<div class="container" id="page2">
+			<div>Test</div>
+			<div>Test 2</div>
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+			<div class="row">
+	 			<div class="col-xs-offset-4">
+						<a href="#" class="nav_button" id="page3DownArrow"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+						<a href="#" class="nav_button" id="page3UpArrow"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
+				</div>
+			</div>
+		</div>
+
+		<!--Page 3-->
+
+		<div class="container" id="page2">
+			<div>Test</div>
+			<div>Test 2</div>
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+			<div class="row">
+	 			<div class="col-xs-offset-4">
+						<a href="#" class="nav_button" id="page3DownArrow"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+						<a href="#" class="nav_button" id="page3UpArrow"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
+				</div>
+			</div>
+		</div>
+
+		<!--Page 4-->
+
+		<div class="container" id="page4">
+			<div>Test</div>
+			<div>Test 2</div>
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+
+			<div>Test</div>
+			<div>Test 2</div>
+			<div class="row">
+	 			<div class="col-xs-offset-4">
+						<a href="#" class="nav_button" id="page4DownArrow"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+						<a href="#" class="nav_button" id="page4UpArrow"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
+				</div>
+			</div>
+		</div>
+
+  	<footer>
+  		<div class="container navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4">	<a href="http://www.nytimes.com"><img class="api_image" src="images/poweredby_nytimes_65a.png"></a>
+				</div>
+				<div class="col-xs-offset-8 col-sm-offset-10 col-md-offset-10">Dan Whiting</div>
+			</div>
+		</div>
+	</footer> 
+		<script src="js/script.js"></script> <!--Load JavaScript file-->
+	</body>	
+</html>
