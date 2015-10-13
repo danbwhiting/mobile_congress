@@ -10,13 +10,21 @@ h1 {
 	font-weight: 100;
 	text-align: center;
 	margin-top: 5px;
+	font-size: 2rem;
 }
 
-select {
+.headerBlock {
+	display: inline-block;
+}
+
+.member_selector {
 	width: 80%;
 	height: 100px;
 	font-family: "Lato", sans-serif;
+	color: black;
 }
+
+
  
 /*div {
 	border: 1px solid white;
@@ -74,7 +82,12 @@ select {
 	font-size: 1rem;
 }
 
-#initial_info {
+.seach_icon {
+	color: white;
+	float: right;
+}
+
+.hide_section {
 	visibility: hidden;
 }
 

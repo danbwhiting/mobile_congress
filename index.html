@@ -11,7 +11,8 @@
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"/> <!--For the select box-->
+
 		<!--Lato font-->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
@@ -20,6 +21,8 @@
 
 		<!-- Jquery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script> <!--For the select box-->		
+
 
 		<!--Bootstrap-->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -28,29 +31,35 @@
 		<header>
 			<div class="container">
 				<div class="row"> <!--Header-->
-					  <div class="col-xs-12 col-sm-12 col-md-12"><h1>Congressional Directory</h1></div>
+					  <div class="col-xs-10 col-sm-10 col-md-10 headerBlock"><h1>Congressional Directory</h1>
+					  </div>
+					  <div class="col-xs-2 col-sm-2 col-md-2 headerBlock search_icon">
+					  	<span class="glyphicon glyphicon-search"></span>
+			  		  </div>
 				</div>
 			</div>
 		</header>
-		<div class="container" id="input_screen">
+		<div class="container" id="input_screen"> <!--The initial screen with the search bar-->
 
 			<div class="row"> <!--white space-->
 				<div class="col-xs-12 col-sm-12 col-md-12 space_between_title_search"></div>
 			</div>
-		  	<div class="row"> <!--Chamber selector-->
+
+<!-- 		  	<div class="row"> 
 		  		<div class="col-xs-offset-6 col-sm-offset-8 col-md-offset-6">
 					<div class="btn-group" role="group" aria-label="...">
 					  <button type="button" class="btn btn-default" id="house_button">House</button>
 					  <button type="button" class="btn btn-primary" id="senate_button">Senate</button>
 					</div>
 	  			</div>
-	  		</div> <!--End of chamber buttons-->
+	  		</div> 
+ -->
 	  		<div class="row">
 	  			<div class="spacer"></div>
   			</div>
 	  		<div class="row"> <!--Search bar-->
-				<div class="col-xs-offset-4 col-sm-offset-6 col-md-offset-8">
-					<select id="member_selector">
+				<div class="col-xs-offset-2 col-sm-offset-6 col-md-offset-8">
+ 					<select class="member_selector">
 						<option>Select a Senator</option>
 						<option value="A000360">Alexander - TN</option>
 						<option value="C000880">Crapo - ID</option> 
@@ -60,7 +69,7 @@
 				</div>
 		  	</div>
 	  	</div>
-  		<div class="container" id="initial_info">
+  		<div class="container" id="initial_info" class="hide_section">
   			<div class="row">
   				<div class="col-xs-12">
   					<div id="memberName"></div>
@@ -71,12 +80,16 @@
   					<div id="memberFacebook"></div>
 				</div>
 				<div class="col-xs-offset-6">
-					<a href="#" class="nav_button" id="page1Arrow"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+					<a href="#" class="nav_button hide_section" id="page1Arrow"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
 				</div>
 			</div>	
 		</div> <!--End of initial screen more info-->
 
 		<div class="container" id="page2">
+			<div class="row">
+	  			<div class="spacer"></div>
+  			</div>
+
 			<div>Test</div>
 			<div>Test 2</div>
 			<div>Test</div>
@@ -149,8 +162,8 @@
   	<footer>
   		<div class="container navbar-fixed-bottom">
 			<div class="row">
-				<div class="col-xs-4 col-sm-4 col-md-4">	<a href="http://www.nytimes.com"><img class="api_image" src="images/poweredby_nytimes_65a.png"></a>
-				</div>
+				<!-- <div class="col-xs-4 col-sm-4 col-md-4">	<a href="http://www.nytimes.com"><img class="api_image" src="images/poweredby_nytimes_65a.png"></a>
+				</div> -->
 				<div class="col-xs-offset-8 col-sm-offset-10 col-md-offset-10">Dan Whiting</div>
 			</div>
 		</div>
