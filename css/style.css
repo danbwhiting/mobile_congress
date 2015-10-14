@@ -3,14 +3,18 @@ body {
 	color: white;
 	background-color: rgba(75,136,203,1);
 	font-size: 2rem;
-	font-weight: 300;
+	font-weight: 100;
+}
+
+footer {
+	font-size: 1.5rem;
 }
 
 h1 {
 	font-weight: 100;
 	text-align: center;
 	margin-top: 5px;
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 
 .headerBlock {
@@ -19,11 +23,14 @@ h1 {
 
 .member_selector {
 	width: 80%;
-	height: 100px;
+	height: 200px;
 	font-family: "Lato", sans-serif;
 	color: black;
 }
 
+a {
+	color: white;
+}
 
  
 /*div {
@@ -88,7 +95,18 @@ h1 {
 }
 
 .hide_section {
-	visibility: hidden;
+	display: none;
+}
+
+#newSearchButton {
+	width: 80%;
+	height: 40px;
+	color: white;
+	background-color: rgba(75,136,203,1);
+	border-radius: 5px;
+	border: 1px solid white;
+	font-size: 2rem;
+	font-weight: 100;
 }
 
 #page2 {
@@ -118,6 +136,8 @@ h1 {
 #page8 {
 	display: none;
 }
+
+
 /* Phones */
 
 @media screen and (max-width: 520px) {

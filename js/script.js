@@ -23,11 +23,12 @@ $('document').ready(function() {
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
 			 $('#memberDCPhone').html(memberInfo.results[0].phone);
 			 $('#memberWebsite').html(memberInfo.results[0].website);
-			 $('#memberTwitter').html("@"+memberInfo.results[0].twitter_id);
-			 $('#memberFacebook').html("<a href=\""+memberInfo.results[0].office+"\" target=\"blank\">Facebook</a>");
+			 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
+			 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
 
 			 $('#initial_info').removeClass('hide_section');
-			 $('#page1Arrow').removeClass('hide_section');
+			 // $('.member_selector').addClass('hide_section');
+			 // $('#newSearchButton').removeClass('hide_section');
 
 			 // $('#memberFacebook').html("<a href=\"http://www.facebook.com/"+memberInfo.results[0].facebook_account+"\" target=\"_blank\">Facebook</a>");
 		 });
