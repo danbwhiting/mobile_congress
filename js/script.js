@@ -26,20 +26,17 @@ $('document').ready(function() {
 			 }
 
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
-			 $('#memberDCPhone').html(memberInfo.results[0].phone);
+			 $('#memberDCPhone').html("Phone: "+memberInfo.results[0].phone);
 			 $('#memberWebsite').html(memberInfo.results[0].website);
 			 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
 			 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
 			 $('#memberYouTube').html("<a href=\"http://www.youtube.com/"+memberInfo.results[0].youtube_id+"\"target=\"blank\">YouTube</a>");
-
-
+			 $('#memberTermEnding').html("Term Ending: "+memberInfo.results[0].term_end);
+			 $('#memberDCFax').html("Fax: "+memberInfo.results[0].fax);
+			 $('memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 
 			 $('#initial_info').removeClass('hide_section');
-
-			 // Check for their birthday
-
-
 
 			 // $('.member_selector').addClass('hide_section');
 			 // $('#newSearchButton').removeClass('hide_section');

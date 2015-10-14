@@ -3,7 +3,7 @@ body {
 	color: white;
 	background-color: rgba(75,136,203,1);
 	font-size: 2rem;
-	font-weight: 100;
+	font-weight: 300;
 }
 
 footer {
@@ -11,7 +11,7 @@ footer {
 }
 
 h1 {
-	font-weight: 100;
+	font-weight: 300;
 	text-align: center;
 	margin-top: 5px;
 	font-size: 2.5rem;
@@ -63,7 +63,7 @@ a {
 .contact_info {
 	float: right;
 	padding: 5px;
-	font-weight: 100;
+	font-weight: 300;
 }
 
 .space_between_title_search {
