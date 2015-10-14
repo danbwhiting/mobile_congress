@@ -4,8 +4,7 @@ $('document').ready(function() {
 	// listens for user selecting Member of Congress
 	$('.member_selector').change(function(e) {
 		var memberID = $(this).val(); // get value user selected
-		console.log(memberID);
-		var url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"+memberID+".json?api-key=802ef781cc3d418e77197521ebc5ff41%3A4%3A72627634";
+		// var url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"+memberID+".json?api-key=802ef781cc3d418e77197521ebc5ff41%3A4%3A72627634";
 
 		var sunlightInfo = "https://congress.api.sunlightfoundation.com/legislators?bioguide_id="+memberID+"&apikey=7845a468f0ee48eabda5d401e834fcd0";
 
@@ -19,14 +18,29 @@ $('document').ready(function() {
 			 // $('#memberTwitter').html("@"+memberInfo.results[0].twitter_account);
 			 // $('#memberFacebook').html("Facebook");
 
-			 $('#memberName').html(memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state);
+
+			 if (memberInfo.results[0].chamber == 'house') {
+				 $('#memberName').html("Rep. "+memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state+"-"+memberInfo.results[0].district);
+			 } else {
+			 	 $('#memberName').html("Sen. "+memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state);
+			 }
+
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
 			 $('#memberDCPhone').html(memberInfo.results[0].phone);
 			 $('#memberWebsite').html(memberInfo.results[0].website);
 			 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
 			 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
+			 $('#memberYouTube').html("<a href=\"http://www.youtube.com/"+memberInfo.results[0].youtube_id+"\"target=\"blank\">YouTube</a>");
+
+
+
 
 			 $('#initial_info').removeClass('hide_section');
+
+			 // Check for their birthday
+
+
+
 			 // $('.member_selector').addClass('hide_section');
 			 // $('#newSearchButton').removeClass('hide_section');
 
