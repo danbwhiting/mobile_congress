@@ -33,7 +33,7 @@ $('document').ready(function() {
 			 $('#memberYouTube').html("<a href=\"http://www.youtube.com/"+memberInfo.results[0].youtube_id+"\"target=\"blank\">YouTube</a>");
 			 $('#memberTermEnding').html("Term Ending: "+memberInfo.results[0].term_end);
 			 $('#memberDCFax').html("Fax: "+memberInfo.results[0].fax);
-			 $('memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
+			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 
 			 $('#initial_info').removeClass('hide_section');
