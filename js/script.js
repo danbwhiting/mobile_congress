@@ -1,5 +1,9 @@
 $('document').ready(function() {
 
+	$('.member_selector').select2( {
+		placeholder: "Select a member"
+	});
+
 	
 	// listens for user selecting Member of Congress
 	$('.member_selector').change(function(e) {
@@ -35,6 +39,11 @@ $('document').ready(function() {
 			 $('#memberDCFax').html("Fax: "+memberInfo.results[0].fax);
 			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
+			 if (memberInfo.results[0].party === "R") {
+			 	$('body').css('background-color', 'rgba(75,136,203,1)');
+			 } else if (memberInfo.results[0].party === "D") {
+			 	$('body').css('background-color', 'rgba(242,108,79,1)');
+			 }
 
 			 $('#initial_info').removeClass('hide_section');
 

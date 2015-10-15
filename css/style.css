@@ -1,7 +1,8 @@
 body {
 	font-family: "Lato", sans-serif;
 	color: white;
-	background-color: rgba(75,136,203,1);
+/*	background-color: rgba(156,196,228,1);
+*/	background-color: rgba(	75,136,203,1);
 	font-size: 2rem;
 	font-weight: 300;
 }
@@ -21,8 +22,13 @@ h1 {
 	display: inline-block;
 }
 
-.member_selector {
+.select2-hidden-accessible {
 	font-family: "Lato", sans-serif;
+	color: black;
+	background-color: white;
+}
+
+.select2-hidden-accessible option {
 	color: black;
 }
 
