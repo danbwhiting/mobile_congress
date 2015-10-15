@@ -9,6 +9,7 @@ body {
 
 footer {
 	font-size: 1.5rem;
+	color: white;
 }
 
 h1 {
@@ -16,6 +17,7 @@ h1 {
 	text-align: center;
 	margin-top: 5px;
 	font-size: 2.5rem;
+	color: white;
 }
 
 .headerBlock {
@@ -28,8 +30,16 @@ h1 {
 	background-color: white;
 }
 
-.select2-hidden-accessible option {
+.select2-hidden-accessible, .select2-results, .select2-search, .select2-search--dropdown {
 	color: black;
+}
+
+.select2-container {
+	color: black;
+}
+
+.select2-dropdown {
+
 }
 
 a {
