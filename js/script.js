@@ -34,16 +34,21 @@ $('document').ready(function() {
 			 $('#memberWebsite').html(memberInfo.results[0].website);
 			 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
 			 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
+
+			 // Check for null on Twitter, Facebook, and YouTube
+
 			 $('#memberYouTube').html("<a href=\"http://www.youtube.com/"+memberInfo.results[0].youtube_id+"\"target=\"blank\">YouTube</a>");
 			 $('#memberTermEnding').html("Term Ending: "+memberInfo.results[0].term_end);
 			 $('#memberDCFax').html("Fax: "+memberInfo.results[0].fax);
 			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
-			 if (memberInfo.results[0].party === "R") {
+			 if (memberInfo.results[0].party === "D") {
 			 	$('body').css('background-color', 'rgba(75,136,203,1)');
-			 } else if (memberInfo.results[0].party === "D") {
+			 } else if (memberInfo.results[0].party === "R") {
 			 	$('body').css('background-color', 'rgba(242,108,79,1)');
 			 }
+
+			 // Check for null on Twitter, Facebook, and YouTube
 
 			 $('#initial_info').removeClass('hide_section');
 
