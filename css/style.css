@@ -14,7 +14,6 @@ footer {
 
 h1 {
 	font-weight: 300;
-	text-align: center;
 	margin-top: 5px;
 	font-size: 2.5rem;
 	color: white;
@@ -22,6 +21,15 @@ h1 {
 
 .headerBlock {
 	display: inline-block;
+}
+
+#memberPhoto.resize {
+    width: 150px; /* you can use % */
+    height: auto;
+}
+
+#memberPhoto {
+	padding-top: 5px;
 }
 
 .select2-hidden-accessible {
@@ -32,14 +40,6 @@ h1 {
 
 .select2-hidden-accessible, .select2-results, .select2-search, .select2-search--dropdown {
 	color: black;
-}
-
-.select2-container {
-	color: black;
-}
-
-.select2-dropdown {
-
 }
 
 a {
@@ -123,32 +123,9 @@ a {
 	font-weight: 100;
 }
 
-#page2 {
-	display: none;
-}
-
-#page3 {
-	display: none;
-}
-
-#page4 {
-	display: none;
-}
-
-#page5 {
-	display: none;
-}
-
-#page6 {
-	display: none;
-}
-
-#page7 {
-	display: none;
-}
-
-#page8 {
-	display: none;
+#memberPhoto {
+	float: right;
+	z-index: 1000;
 }
 
 
@@ -158,4 +135,25 @@ a {
 	.container {
 		border: none;
 	}
+}
+
+/* Desktop */
+
+@media screen and (min-width: 900px) {
+	h1 {
+		font-size: 6rem;
+	}
+
+	body {
+		background: url('../images/sawtooth_mountains.jpeg');
+		background-repeat: none;
+		background-size: 100%;
+	}
+
+	.member_selector {
+		position: absolute;
+		top: 311px;
+
+	}
+
 }

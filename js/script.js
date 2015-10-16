@@ -3,7 +3,6 @@ $('document').ready(function() {
 	$('.member_selector').select2( {
 		placeholder: "Select a member"
 	});
-
 	
 	// listens for user selecting Member of Congress
 	$('.member_selector').change(function(e) {
@@ -27,8 +26,9 @@ $('document').ready(function() {
 				 $('#memberName').html("Rep. "+memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state+"-"+memberInfo.results[0].district);
 			 } else {
 			 	 $('#memberName').html("Sen. "+memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state);
-			 }
+			 }  
 
+			 $('#memberPhoto').html("<img src=\"https://theunitedstates.io/images/congress/225x275/"+memberID+".jpg\">");
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
 			 $('#memberDCPhone').html("Phone: "+memberInfo.results[0].phone);
 			 $('#memberWebsite').html(memberInfo.results[0].website);
@@ -43,9 +43,14 @@ $('document').ready(function() {
 			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 			 if (memberInfo.results[0].party === "D") {
+			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(75,136,203,1)');
 			 } else if (memberInfo.results[0].party === "R") {
-			 	$('body').css('background-color', 'rgba(242,108,79,1)');
+			 	$('body').css('background', 'none');
+			 	$('body').css('background-color', 'rgba(255,0,60,1)');
+			 } else {
+			 	$('body').css('background', 'none');
+			 	$('body').css('background-color', 'rgba(127,43,81,.7)');
 			 }
 
 			 // Check for null on Twitter, Facebook, and YouTube
@@ -65,61 +70,6 @@ $('document').ready(function() {
 	// 	     // 		// this is where we do what we want with each tweet
 	// 	   		//  $('#results').append('<p>'+cnyt.twitter_account+'</p>');
 	// });
-
-
-	//Page 1 Navigation 
-
-	$('#page1Arrow').click(function() {
-		event.preventDefault();
-		$("#input_screen").hide();
-		$("#initial_info").hide();
-		$("#page2").slideUp("slow", function() {
-			$("#page2").show();
-			console.log("here");
-		});
-	});
-
-	//Page 2 Navigation 
-
-	$('#page2UpArrow').click(function() {
-		event.preventDefault();
-		$("#page2").hide();
-		$("#initial_info").slideUp("slow", function() {
-			$("#input_screen").show();
-			$("#initial_info").show();
-
-		});
-	});
-
-	//Page 3 Navigation 
-
-	$('#page2UpArrow').click(function() {
-		event.preventDefault();
-		$("#page2").hide();
-		$("#initial_info").slideUp("slow", function() {
-			$("#input_screen").show();
-			$("#initial_info").show();
-
-		});
-	});
-
-
-
-
-
-
-
-	//Page 4 Navigation
-
-	$('#page4UpArrow').click(function() {
-		event.preventDefault();
-		$("#page2").hide();
-		$("#initial_info").slideUp("slow", function() {
-			$("#input_screen").show();
-			$("#initial_info").show();
-
-		});
-	});
 
 });
 
