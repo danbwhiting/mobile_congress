@@ -23,13 +23,9 @@ h1 {
 	display: inline-block;
 }
 
-#memberPhoto.resize {
-    width: 150px; /* you can use % */
+#memberPhotoResize {
+    width: 100px; /* you can use % */
     height: auto;
-}
-
-#memberPhoto {
-	padding-top: 5px;
 }
 
 .select2-hidden-accessible {
@@ -123,9 +119,21 @@ a {
 	font-weight: 100;
 }
 
-#memberPhoto {
-	float: right;
-	z-index: 1000;
+
+.fullState {
+	visibility: none;
+}
+
+.subcommittee {
+	text-indent: 30px;
+}
+
+.committees {
+	font-size: .7rem;
+}
+
+h2 {
+	margin-top: 0px;
 }
 
 
@@ -135,6 +143,14 @@ a {
 	.container {
 		border: none;
 	}
+
+	#memberPhoto {
+		padding-top: 5px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+		float: left;
+	}
+
 }
 
 /* Desktop */
@@ -150,10 +166,20 @@ a {
 		background-size: 100%;
 	}
 
+	.glyphicon {
+		padding-left: 10px;
+	}
+
+	.committeeInfo {
+		border: 1px solid white;
+		padding: 10px;
+		margin-left: 5px;
+	}
+/*
 	.member_selector {
 		position: absolute;
 		top: 311px;
 
 	}
-
+*/
 }

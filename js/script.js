@@ -1,26 +1,24 @@
 $('document').ready(function() {
 
-	$('.member_selector').select2( {
-		placeholder: "Select a member"
-	});
+	$('.member_selector').select2();
 	
 	// listens for user selecting Member of Congress
 	$('.member_selector').change(function(e) {
 		var memberID = $(this).val(); // get value user selected
 		// var url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/"+memberID+".json?api-key=802ef781cc3d418e77197521ebc5ff41%3A4%3A72627634";
 
+
+		// Default these to not display 
+		$('#memberTwitter').addClass('hide_section');
+		$('#memberFacebook').addClass('hide_section');
+		$('#memberYouTube').addClass('hide_section');
+		$('#memberTermEnding').addClass('hide_section');
+
 		var sunlightInfo = "https://congress.api.sunlightfoundation.com/legislators?bioguide_id="+memberID+"&apikey=7845a468f0ee48eabda5d401e834fcd0";
+		var sunlightCommittees = "https://congress.api.sunlightfoundation.com/committees?member_ids="+memberID+"&apikey=7845a468f0ee48eabda5d401e834fcd0";
 
 		 $.getJSON(sunlightInfo,function(memberInfo){
 		    // this is where we can loop through the results in the json object
-
-			 // $('#memberName').html(memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].roles[0].party+"-"+memberInfo.results[0].roles[0].state);
-			 // $('#memberDCOffice').html("325 Russell");
-			 // $('#memberDCPhone').html("202-224-1100");
-			 // $('#memberWebsite').html(memberInfo.results[0].url);
-			 // $('#memberTwitter').html("@"+memberInfo.results[0].twitter_account);
-			 // $('#memberFacebook').html("Facebook");
-
 
 			 if (memberInfo.results[0].chamber == 'house') {
 				 $('#memberName').html("Rep. "+memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state+"-"+memberInfo.results[0].district);
@@ -28,18 +26,35 @@ $('document').ready(function() {
 			 	 $('#memberName').html("Sen. "+memberInfo.results[0].first_name+" "+memberInfo.results[0].last_name+", "+memberInfo.results[0].party+"-"+memberInfo.results[0].state);
 			 }  
 
-			 $('#memberPhoto').html("<img src=\"https://theunitedstates.io/images/congress/225x275/"+memberID+".jpg\">");
+			 $('#memberPhoto').html("<img id=\"memberPhotoResize\" src=\"https://theunitedstates.io/images/congress/225x275/"+memberID+".jpg\">");
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
-			 $('#memberDCPhone').html("Phone: "+memberInfo.results[0].phone);
-			 $('#memberWebsite').html(memberInfo.results[0].website);
-			 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
-			 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
+			 $('#memberDCPhone').html(memberInfo.results[0].phone);
+			 $('#memberDCFax').html("F:"+memberInfo.results[0].fax);
+			 $('#memberWebsite').html("<a href=\""+memberInfo.results[0].website+"\"target=\"blank\">"+memberInfo.results[0].website+"</a>");
 
-			 // Check for null on Twitter, Facebook, and YouTube
+			 console.log('Twitter is'+memberInfo.results[0].twitter_id);
+			 if (memberInfo.results[0].twitter_id != 'null') {
+			 	 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
+			 	 $('#memberTwitter').removeClass('hide_section');
+			 } // If they have a Twitter account, display it
 
-			 $('#memberYouTube').html("<a href=\"http://www.youtube.com/"+memberInfo.results[0].youtube_id+"\"target=\"blank\">YouTube</a>");
-			 $('#memberTermEnding').html("Term Ending: "+memberInfo.results[0].term_end);
-			 $('#memberDCFax').html("Fax: "+memberInfo.results[0].fax);
+			 // Fix Facebook so it will check between ID and Name
+			 if (memberInfo.results[0].facebook_id != 'null') {
+				 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
+	  	 		 $('#memberFacebook').removeClass('hide_section');
+
+			 } // If they have a Facebook account, display it
+
+			 if (memberInfo.results[0].youtube_id != 'undefined') {
+		 		 $('#memberYouTube').html("<a href=\"http://www.youtube.com/"+memberInfo.results[0].youtube_id+"\"target=\"blank\">YouTube</a>");
+		 		 $('#memberYouTube').removeClass('hide_section');
+	  	  	 } // If they have a YouTube account, display it
+
+	  	  	 if (memberInfo.results[0].chamber === 'senate') {
+				 $('#memberTermEnding').html("Term Ending: "+memberInfo.results[0].term_end);  	  	 	
+				 $('#memberTermEnding').removeClass('hide_section');
+	  	  	 } // Only display term ending if they are in the Senate
+
 			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 			 if (memberInfo.results[0].party === "D") {
@@ -51,17 +66,28 @@ $('document').ready(function() {
 			 } else {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(127,43,81,.7)');
-			 }
-
-			 // Check for null on Twitter, Facebook, and YouTube
+			 } // Change the background color depending on their party
 
 			 $('#initial_info').removeClass('hide_section');
-
-			 // $('.member_selector').addClass('hide_section');
-			 // $('#newSearchButton').removeClass('hide_section');
-
-			 // $('#memberFacebook').html("<a href=\"http://www.facebook.com/"+memberInfo.results[0].facebook_account+"\" target=\"_blank\">Facebook</a>");
 		 });
+
+		 $.getJSON(sunlightCommittees,function(memberCommittee) {
+		 	// Get the committee data
+
+				$('#committees').empty(); // Clears previous committees
+
+				$('#committees').append('<h2>Committee Assignments</h2>');
+
+		 		$.each(memberCommittee.results, function(index) {	
+		 			if (memberCommittee.results[index].subcommittee) {
+		 				$('#committees').append('<div class="subcommittee">'+memberCommittee.results[index].name+' Subcommittee');	 			
+		 			} else {
+			 			$('#committees').append('<div>'+memberCommittee.results[index].name);	 			
+		 			}
+		 		}); // Loop to load committee assignments
+
+		 }); // End of committee data	
+
 	 });
 
 	// 	$('#initial_info').css('visibility', 'visible');
@@ -70,7 +96,6 @@ $('document').ready(function() {
 	// 	     // 		// this is where we do what we want with each tweet
 	// 	   		//  $('#results').append('<p>'+cnyt.twitter_account+'</p>');
 	// });
-
 });
 
 
@@ -88,54 +113,4 @@ $('document').ready(function() {
 	// 	$('#senate_button').attr('class','btn btn-primary');
 	// 	$('#house_button').attr('class', 'btn btn-default');
 	// });
-
-	// $(function() {
-	//     var members = [
-	//       "Risch",
-	//       "Crapo",
-	//       "McCarthy",
-	//       "Labrador",
-	//       "Simpson",
-	//       "Hoyer"
-	//     ];
-	//     $( "#memberSelector" ).autocomplete({
-	//       source: members
-	//     });
-	//   });
-
-	// Retrieve info for member search
-
-	// User selects from dropdown
-	// Use id to pull info from api
-	// Update HTML in info section based on info from api
-	// Unhide info section
-
-	// var data = [{ id: 'A000360', text: 'Crapo'}, 
-	// 				{ id: 'R000584', text: 'Risch'}, 
-	// 				{ id: 'C000800', text: 'Alexander'}, 
-	// 				{ id: 'M000303', text: 'McCain'} 
-	// 				];
-
-	// $('.member_selector').select2( {
-	// 	placeholder: "Select a Member",
-	// 	// allowClear: true,
-	// 	data: data
-	// });
-
-
-// var url = "http://api.nytimes.com/svc/politics/v3/us/legislative/congress/113/senate/members/current.json?api-key=802ef781cc3d418e77197521ebc5ff41%3A4%3A72627634";
-
-	// get the json file
-	// $('#start').click(function() {
-	// 	 console.log("Started");
-	// 	 $.getJSON(url,function(json){
-	//     // this is where we can loop through the results in the json object
-
-	// 	    $.each(json.results[0].members,function(i, cnyt){
-	//      		// this is where we do what we want with each tweet
-	//    		 $('#results').append('<p>'+cnyt.twitter_account+'</p>');
-	// 		});		
-	// 	});
-	// });
-
 
