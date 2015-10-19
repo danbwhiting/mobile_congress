@@ -30,10 +30,12 @@ $('document').ready(function() {
 			 $('#memberPhoto').html("<img id=\"memberPhotoResize\" src=\"https://theunitedstates.io/images/congress/225x275/"+memberID+".jpg\">");
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
 			 $('#memberDCPhone').html("<a href=\"tel:"+memberInfo.results[0].phone+"\">"+memberInfo.results[0].phone+"</a>");
-			 $('#memberDCFax').html("F:"+memberInfo.results[0].fax);
+			 if (memberInfo.results[0].fax !+ 'null') {
+				 $('#memberDCFax').html("F:"+memberInfo.results[0].fax);					 	
+			 }
+
 			 $('#memberWebsite').html("<a href=\""+memberInfo.results[0].website+"\"target=\"blank\">"+memberInfo.results[0].website+"</a>");
 
-			 console.log('Twitter is'+memberInfo.results[0].twitter_id);
 			 if (memberInfo.results[0].twitter_id != 'null') {
 			 	 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
 			 	 $('#memberTwitter').removeClass('hide_section');

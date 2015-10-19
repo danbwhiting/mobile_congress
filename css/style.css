@@ -188,8 +188,17 @@ h2 {
 		float: left;
 	}
 
+	#committees {
+		margin-left: 5px;
+		margin-bottom: 20px;
+	}
+
+	.photoInfo {
+		display: none;
+	}
+
 	.footer {
-		visibility: none;
+		display: none;
 	}
 
 }
