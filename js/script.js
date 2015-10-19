@@ -30,7 +30,7 @@ $('document').ready(function() {
 			 $('#memberPhoto').html("<img id=\"memberPhotoResize\" src=\"https://theunitedstates.io/images/congress/225x275/"+memberID+".jpg\">");
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
 			 $('#memberDCPhone').html("<a href=\"tel:"+memberInfo.results[0].phone+"\">"+memberInfo.results[0].phone+"</a>");
-			 if (memberInfo.results[0].fax !+ 'null') {
+			 if (memberInfo.results[0].fax != 'null') {
 				 $('#memberDCFax').html("F:"+memberInfo.results[0].fax);					 	
 			 }
 
