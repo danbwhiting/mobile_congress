@@ -13,6 +13,7 @@ $('document').ready(function() {
 		$('#memberFacebook').addClass('hide_section');
 		$('#memberYouTube').addClass('hide_section');
 		$('#memberTermEnding').addClass('hide_section');
+		$('.photoInfo').addClass('hide_section');
 
 		var sunlightInfo = "https://congress.api.sunlightfoundation.com/legislators?bioguide_id="+memberID+"&apikey=7845a468f0ee48eabda5d401e834fcd0";
 		var sunlightCommittees = "https://congress.api.sunlightfoundation.com/committees?member_ids="+memberID+"&apikey=7845a468f0ee48eabda5d401e834fcd0";
@@ -28,7 +29,7 @@ $('document').ready(function() {
 
 			 $('#memberPhoto').html("<img id=\"memberPhotoResize\" src=\"https://theunitedstates.io/images/congress/225x275/"+memberID+".jpg\">");
 			 $('#memberDCOffice').html(memberInfo.results[0].office);
-			 $('#memberDCPhone').html(memberInfo.results[0].phone);
+			 $('#memberDCPhone').html("<a href=\"tel:"+memberInfo.results[0].phone+"\">"+memberInfo.results[0].phone+"</a>");
 			 $('#memberDCFax').html("F:"+memberInfo.results[0].fax);
 			 $('#memberWebsite').html("<a href=\""+memberInfo.results[0].website+"\"target=\"blank\">"+memberInfo.results[0].website+"</a>");
 
@@ -86,16 +87,11 @@ $('document').ready(function() {
 		 			}
 		 		}); // Loop to load committee assignments
 
+		 		$('.committeeInfo').css('border', '1px solid white');
 		 }); // End of committee data	
 
 	 });
 
-	// 	$('#initial_info').css('visibility', 'visible');
-
-	// 		    // $.each(json.results[0].members,function(i, memberInfo){
-	// 	     // 		// this is where we do what we want with each tweet
-	// 	   		//  $('#results').append('<p>'+cnyt.twitter_account+'</p>');
-	// });
 });
 
 
