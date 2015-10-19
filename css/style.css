@@ -188,7 +188,7 @@ h2 {
 		float: left;
 	}
 
-	#committees {
+	.committeeInfo {
 		margin-left: 5px;
 		margin-bottom: 20px;
 	}
@@ -216,9 +216,14 @@ h2 {
 		background-size: 100%;
 	}
 
+
 	.committeeInfo {
 		padding: 10px;
 		margin-left: 5px;
+	}
+
+	.modal-content {
+		font-size: .7rem;
 	}
 /*
 	.member_selector {
