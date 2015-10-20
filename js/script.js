@@ -1,5 +1,19 @@
 $('document').ready(function() {
 
+	var sunlightInfoAll = "https://congress.api.sunlightfoundation.com/legislators?in_office=true&apikey=7845a468f0ee48eabda5d401e834fcd0"
+
+	// Load members into menu
+	// $.getJSON(sunlightInfoAll, function(membersForSelect){
+	// 	$.each(membersForSelect.results, function(index) {	
+	// 	 	if (membersForSelect.results[index].chamber === 'house') {
+	// 					$('.member_selector').append('<option value=\"'+membersForSelect.results[index].bioguide_id+'\">'+membersForSelect.results[index].last_name+','+membersForSelect.results[index].first_name+', '+membersForSelect.results[index].state+'-'+membersForSelect.results[index].district+'</option>');
+	// 	 			} else {
+	// 					$('.member_selector').append('<option value=\"'+membersForSelect.results[index].bioguide_id+'\">'+membersForSelect.results[index].last_name+','+membersForSelect.results[index].first_name+', '+membersForSelect.results[index].state+'</option>');
+	// 	 			}
+	// 	 }); 
+	// });
+
+
 	$('.member_selector').select2();
 	
 	// listens for user selecting Member of Congress
@@ -62,13 +76,16 @@ $('document').ready(function() {
 
 			 if (memberInfo.results[0].party === "D") {
 			 	$('body').css('background', 'none');
-			 	$('body').css('background-color', 'rgba(75,136,203,1)');
+			 	$('body').css('background-color', 'rgba(15,56,255,.7)');
+			 	// $('.dropDownWrap').css('background-color', 'black');
 			 } else if (memberInfo.results[0].party === "R") {
 			 	$('body').css('background', 'none');
-			 	$('body').css('background-color', 'rgba(255,0,60,1)');
+			 	$('body').css('background-color', 'rgba(255,22,54,1)');
+			 	// $('.dropDownWrap').css('background-color', 'rgba(255,0,60,.5)');
 			 } else {
 			 	$('body').css('background', 'none');
-			 	$('body').css('background-color', 'rgba(127,43,81,.7)');
+			 	$('body').css('background-color', 'rgba(164,37,232,.7)');
+			 	// $('.dropDownWrap').css('background-color', 'rgba(127,43,81,.4)');
 			 } // Change the background color depending on their party
 
 			 $('#initial_info').removeClass('hide_section');
@@ -96,19 +113,8 @@ $('document').ready(function() {
 
 });
 
-
-
-// Listen for a click on the House button. Change it to primary, and Senate to default
-
-	// $('#house_button').click(function() {
-	// 	$('#house_button').attr('class','btn btn-primary');
-	// 	$('#senate_button').attr('class', 'btn btn-default');
-	// });
-
-	// Listen for a click on the Senate button. Change it to primary, and House to default
-
-	// $('#senate_button').click(function() {
-	// 	$('#senate_button').attr('class','btn btn-primary');
-	// 	$('#house_button').attr('class', 'btn btn-default');
-	// });
+	// Display the help and info slide down section
+	$('.glyphicon-info-sign').on('click', function() {
+	      $('.dropDownWrap').slideToggle();
+	 });
 

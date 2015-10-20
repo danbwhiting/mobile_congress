@@ -1,8 +1,7 @@
 body {
 	font-family: "Lato", sans-serif;
 	color: white;
-/*	background-color: rgba(156,196,228,1);
-*/	background-color: rgba(75,136,203,1);
+	background-color: rgba(75,136,203,1);
 	font-size: 2rem;
 	font-weight: 300;
 }
@@ -17,6 +16,22 @@ h1 {
 	margin-top: 5px;
 	font-size: 2.5rem;
 	color: white;
+}
+
+h2 {
+	text-align: center;
+}
+
+h3 {
+	font-weight: 600;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.tagline {
+	margin-top:0;
+	font-size: .8rem;
+	font-style: italic;
 }
 
 .headerBlock {
@@ -62,11 +77,6 @@ a {
 
 /* Additional styles*/
 
-
-.api_image {
-	padding: 5px;
-}
-
 .title {
 	margin: 0 auto;
 	height: auto;
@@ -87,10 +97,6 @@ a {
 	height: 50px;
 }
 
-.chamber_button {
-	display: inline-block;
-}
-
 .nav_button {
 	color: white;
 	padding: 5px;
@@ -98,11 +104,6 @@ a {
 
 .contact_info {
 	font-size: 1rem;
-}
-
-.seach_icon {
-	color: white;
-	float: right;
 }
 
 .hide_section {
@@ -120,17 +121,13 @@ a {
 	font-weight: 100;
 }
 
-
-.fullState {
-	visibility: none;
-}
-
 .subcommittee {
-	text-indent: 30px;
+	padding-left: 30px;
 }
 
 .committees {
 	font-size: .7rem;
+	padding: 5px;
 }
 
 h2 {
@@ -173,10 +170,49 @@ h2 {
     height: 200px;
 }
 
+.dropDownWrap {
+	  width:100%;
+	  height:auto;
+	  margin:0 0 10px 0;
+	  background-color: black;
+	  color: white;
+	  font-family: "Lato", sans-serif;
+	  font-weight: 300;
+	  font-size: 1.5rem;
+	  display:none;
+	  box-shadow:inset 0 3px 5px rgba(0,0,0,0.1);
+}
+
+#helpInfo {
+	width: 40%;
+	display: inline-block;
+	padding: 5px 20px 5px 20px;
+	text-align: center;
+}
+
+#helpInfo ul {
+	list-style: none;
+}
+
+#siteInfo {
+	width: 50%;
+	display: inline-block;
+	padding: 5px 20px 5px 20px;
+}
+
+/* 
+@media (min-width:320px) { smartphones, iPhone, portrait 480x320 phones  }
+@media (min-width:481px) { portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide.  }
+@media (min-width:641px) { portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones  }
+@media (min-width:961px) {  tablet, landscape iPad, lo-res laptops ands desktops  }
+@media (min-width:1025px) { big landscape tablets, laptops, and desktops  }
+@media (min-width:1281px) {  hi-res laptops and desktops  }
+
+*/
 
 /* Phones */
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 641px) {
 	.container {
 		border: none;
 	}
@@ -189,7 +225,7 @@ h2 {
 	}
 
 	.committeeInfo {
-		margin-left: 5px;
+		margin-left:  10px;
 		margin-bottom: 20px;
 	}
 
@@ -200,7 +236,7 @@ h2 {
 	.footer {
 		display: none;
 	}
-
+ 
 }
 
 /* Desktop */
@@ -211,11 +247,10 @@ h2 {
 	}
 
 	body {
-		background: url('../images/sawtooth_mountains.jpeg');
+		background: url('../images/kootenai_river_valley.jpg');
 		background-repeat: none;
 		background-size: 100%;
 	}
-
 
 	.committeeInfo {
 		margin-bottom: 10px;
