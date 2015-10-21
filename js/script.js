@@ -94,15 +94,15 @@ $('document').ready(function() {
 			 if (memberInfo.results[0].party === "D") {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(15,56,255,.7)');
-			 	$('.dropDownWrap').css('background-color', 'rgba(15,56,255,1)');
+			 	$('.dropDownWrap').css('background-color', 'rgba(69,137,232,.7)');
 			 } else if (memberInfo.results[0].party === "R") {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(255,22,54,1)');
-			 	$('.dropDownWrap').css('background-color', 'rgba(255,22,54,1)');
+			 	$('.dropDownWrap').css('background-color', 'rgba(255,62,98,.7)');
 			 } else {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(164,37,232,.7)');
-			 	$('.dropDownWrap').css('background-color', 'rgba(127,43,81,1)');
+			 	$('.dropDownWrap').css('background-color', 'rgba(213,94,255,1)');
 			 } // Change the background color depending on their party
 
 			 $('#initial_info').removeClass('hide_section');
