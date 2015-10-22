@@ -174,10 +174,11 @@ h2 {
 }
 
 #helpInfo {
-	width: 40%;
+	width: 38%;
 	display: inline-block;
 	padding: 10px 0px 10px 0px;
 	text-align: center;
+	margin-right: 10px;
 }
 
 #helpInfo ul {
@@ -185,7 +186,7 @@ h2 {
 }
 
 #siteInfo {
-	width: 59%;
+	width: 58%;
 	display: inline-block;
 	padding: 10px 0px 10px 0px;
 }
@@ -256,6 +257,14 @@ a:visited {
  		height: auto;
 
  	}
+}
+
+@media screen and (min-width: 642px) and (max-width: 899px) {
+
+	.photoInfo {
+		display: none;
+	}
+
 }
 
 /* Desktop and landscape tablet*/
