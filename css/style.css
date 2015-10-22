@@ -4,7 +4,6 @@ body {
 	background-color: rgba(75,136,203,1);
 	font-size: 2rem;
 	font-weight: 300;
-	width: 100%;
 }
 
 footer {
@@ -17,7 +16,7 @@ h1 {
 	margin-top: 5px;
 	font-size: 2.5rem;
 	color: white;
-	text-indent: -9000px;
+	: -9000px;
 }
 
 h2 {
@@ -223,35 +222,9 @@ a:visited {
 
 */
 
-/* Smaller phone screens */
-
-@media screen and (max-width: 320px) {
-	.photoInfo {
-		display: none;
-	}
-
-	.footer: {
-		display: none;
-	}
-	.member_selector {
-		width: 250px;
-	}
-
-	h1 {
-		font-size: 8rem;
-	}
- 
- 	#logo {
- 		width: 250px;
- 		height: auto;
-
- 	}
-}
-
-
 /* Phones and portrait tables */
 
-@media screen and (min-width: 321px and max-width: 641px) {
+@media screen and (max-width: 641px) {
 	.container {
 		border: none;
 	}
@@ -267,13 +240,12 @@ a:visited {
 		display: none;
 	}
 
+	.footer {
+		display: none;
+	}
 
 	.member_selector {
 		width: 320px;
-	}
-
-	.footer {
-		display: none;
 	}
 
 	h1 {
@@ -286,7 +258,6 @@ a:visited {
 
  	}
 }
-
 
 @media screen and (min-width: 642px) and (max-width: 899px) {
 
