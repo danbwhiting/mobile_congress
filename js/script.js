@@ -114,14 +114,12 @@ $('document').ready(function() {
 
 		 		$.each(memberCommittee.results, function(index) {
 		 			if (!memberCommittee.results[index].subcommittee) {
-		 				console.log('Committee'+index);
 		 				$('#committees').append('<div id='+memberCommittee.results[index].committee_id+'>'+memberCommittee.results[index].name);	 			
 		 			} 
 		 		}); // Loop to load committee assignments
 
 		 		$.each(memberCommittee.results, function(index) {
 		 			if (memberCommittee.results[index].subcommittee) {
-		 				console.log(memberCommittee.results[index].committee_id+' '+index);
 		 				$('#'+memberCommittee.results[index].parent_committee_id).append('<div class="subcommittee">'+memberCommittee.results[index].name+' Subcommittee');
 		 			}
 		 		}); // Loop again to load subcommittee assignments and place under parent committee
