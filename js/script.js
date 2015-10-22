@@ -64,7 +64,7 @@ $('document').ready(function() {
 				//  $('#memberDCFax').html("F:"+memberInfo.results[0].fax);					 	
 			 // } -- No one cares about the fax number, right?
 
-			 $('#memberWebsite').html("<a href=\""+memberInfo.results[0].website+"\"target=\"blank\">"+memberInfo.results[0].website+"</a>");
+			 $('#memberWebsite').html("<a href=\""+memberInfo.results[0].website+"\"target=\"blank\">Website</a>");
 
 			 if (memberInfo.results[0].twitter_id != null) {
 			 	 $('#memberTwitter').html("<a href=\"http://www.twitter.com/"+memberInfo.results[0].twitter_id+"\"target=\"blank\">@"+memberInfo.results[0].twitter_id+"</a>");
@@ -76,7 +76,6 @@ $('document').ready(function() {
 			 if (memberInfo.results[0].facebook_id != null) {
 				 $('#memberFacebook').html("<a href=\"http://www.facebook.com/profile.php?id="+memberInfo.results[0].facebook_id+"\"target=\"blank\">Facebook</a>");
 	  	 		 $('#memberFacebook').removeClass('hide_section');
-
 			 } // If they have a Facebook account, display it
 
 			 if (memberInfo.results[0].youtube_id != undefined) {
@@ -94,18 +93,16 @@ $('document').ready(function() {
 			 if (memberInfo.results[0].party === "D") {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(15,56,255,.7)');
-			 	$('.dropDownWrap').css('background-color', 'rgba(69,137,232,.7)');
 			 } else if (memberInfo.results[0].party === "R") {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(255,22,54,1)');
-			 	$('.dropDownWrap').css('background-color', 'rgba(255,62,98,.7)');
 			 } else {
 			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(164,37,232,.7)');
-			 	$('.dropDownWrap').css('background-color', 'rgba(213,94,255,1)');
 			 } // Change the background color depending on their party
 
-			 $('#initial_info').removeClass('hide_section');
+			 $('#contactInfo').removeClass('hide_section')
+			 $('#committees').removeClass('hide_section');
 		 });
 
 		 $.getJSON(sunlightCommittees,function(memberCommittee) {
@@ -129,7 +126,6 @@ $('document').ready(function() {
 		 			}
 		 		}); // Loop again to load subcommittee assignments and place under parent committee
 
-		 		$('.committeeInfo').css('border', '1px solid white'); // Add a border to committee information
 		 }); // End of committee data	
 
 	 });
