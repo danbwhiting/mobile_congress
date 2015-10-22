@@ -203,15 +203,6 @@ h2 {
 #memberDCPhone, #memberDCFax, #memberWebsite, #memberTwitter, #memberFacebook, #memberYouTube {
 	color: black;
 }
-/*
-a:link {
-	color: blue;
-}
-
-a:visited {
-	color: purple;
-}
-*/
 
 /* 
 @media (min-width:320px) { smartphones, iPhone, portrait 480x320 phones  }
@@ -225,7 +216,7 @@ a:visited {
 
 /* Smaller phone screens */
 
-@media screen and (max-width: 320px) {
+@media all and (min-width: 320px) {
 	.photoInfo {
 		display: none;
 	}
@@ -233,6 +224,7 @@ a:visited {
 	.footer: {
 		display: none;
 	}
+
 	.member_selector {
 		width: 250px;
 	}
@@ -251,7 +243,7 @@ a:visited {
 
 /* Phones and portrait tables */
 
-@media screen and (min-width: 321px and max-width: 641px) {
+@media all and (min-width: 641px) {
 	.container {
 		border: none;
 	}
@@ -288,19 +280,29 @@ a:visited {
 }
 
 
-@media screen and (min-width: 642px) and (max-width: 899px) {
+/*
+@media all and (max-width: 961px) {
 
 	.photoInfo {
 		display: none;
 	}
 
 }
-
+*/
 /* Desktop and landscape tablet*/
 
-@media screen and (min-width: 900px) {
+@media all and (min-width: 961px) {
 	h1 {
 		font-size: 8rem;
+	}
+
+	.footer {
+		display: inline-block;
+
+	}
+
+	.photoInfo: {
+		display: inline-block;
 	}
 
 	body {
