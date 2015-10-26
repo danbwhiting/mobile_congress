@@ -12,12 +12,17 @@ footer {
 }
 
 h1 {
+	background-image: url('../images/capitolview-logo-400.png');
 	font-weight: 300;
 	margin-top: 5px;
 	font-size: 2.5rem;
 	color: white;
-	: -9000px;
+	text-indent: -9999px; /* Hide the text for SEO */
+	height: 90px;
+	width: 400px;
+	white-space: nowrap;
 }
+
 
 h2 {
 	text-align: center;
@@ -174,21 +179,15 @@ h2 {
 }
 
 #helpInfo {
-	width: 38%;
-	display: inline-block;
-	padding: 10px 0px 10px 0px;
-	text-align: center;
-	margin-right: 10px;
+	padding: 10px;
 }
 
-#helpInfo ul {
+/*#helpInfo ul {
 	list-style: none;
 }
-
+*/
 #siteInfo {
-	width: 58%;
-	display: inline-block;
-	padding: 10px 0px 10px 0px;
+	padding: 10px;
 }
 
 #selector_div {

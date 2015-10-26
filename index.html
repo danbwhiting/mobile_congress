@@ -3,7 +3,7 @@
 	<head>
     	<meta charset="utf-8">
     	<meta name="description" content="Congressional Directory">
-    	<meta name="keywords" content"congress, congressional, directory, information, contact information, contact info">
+    	<meta name="keywords" content"congress, congressional, directory, information, contact information, contact info, birthday, mobile, committee assignments, senators, members of Congress, congressmen, congresswoman">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>Capitol View Dashboard</title>
@@ -25,7 +25,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script> <!--For the select box-->		
 
 		<!--Velocity.js-->
-		<script src="js/velocity.min.js"></script>
+		<!--<script src="js/velocity.min.js"></script>-->
 
 		<!--Bootstrap-->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -35,8 +35,8 @@
 		<header>
 			<div class="container">
 				<div class="row"> <!--Header-->
-				  <div class="col-xs-8 col-sm-8 col-md-8 headerBlock">
-				  	<img id="logo" src="images/capitolview-logo-400.png"><!-- <h1>CapitolView.us</h1> -->
+				  <div class="col-xs-6 col-sm-8 col-md-8 headerBlock">
+				  	<h1>CapitolView.us</h1>
 				  </div>
 				  <div class="col-xs-offset-11 col-sm-offset-11 col-md-offset-11">
 				  	<button id="info-btn"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button> 
@@ -44,21 +44,27 @@
 				</div>
 			</div>
 		</header>
+
+		<!-- Text for drop down more info section-->
+
 		<div class="dropDownWrap">
 
-			<div id="helpInfo">
-				<h3>Search Pointers</h3>
-					<ul>
-						<li>Type the first or last name, 2 letter state, or district (ID-2)</li>
-						<li>Type a state's abbreviation to see all members from that state.</li>
-						<li>The background changes with the Member's party affiliation.</li>
-					</ul>
-			</div>
-			<div id="siteInfo">
+			<div class="row">
+				<div id="helpInfo" class="col-xs-12 col-sm-6 col-md-4">
+					<h3>Search Pointers</h3>
+						<ul>
+							<li>Type the first or last name, 2 letter state, or district (ex. ID-2)</li>
+							<li>Type a state's abbreviation to see all members from that state.</li>
+							<li>Type a state's abbreviation plus - to see all Congressional districts from that state (ex. 'KS-')</li>
+							<li>The background color changes with the Member's party affiliation.</li>
+						</ul>
+				</div>
+				<div id="siteInfo" class="col-xs-12 col-sm-6 col-md-8">
 
-				<P>This site is designed to give you quick access to key information on Members of Congress. Right now it is focused on contact information, photos, and commmittees they serve on. We have plans to add other helpful information and are open to suggestions and code contributions at <a href="https://github.com/danbwhiting/mobile_congress">danbwhiting.github.io</p>.
+					<P>This site is designed to give you quick access to key information on members of Congress. Right now it is focused on contact information, photos, and the commmittees they serve on. We have plans to add other helpful information and are open to suggestions and code contributions at <a href="https://github.com/danbwhiting/mobile_congress">danbwhiting.github.io</a>.</p>
 
-				<p>It is powered by data from the <a href="https://sunlightfoundation.com/api/">Sunlight Foundation</a> and <a href="https://theunitedstates.io/">theunitedstates.io</a>.
+					<p>It is powered by data from the <a href="https://sunlightfoundation.com/api/">Sunlight Foundation</a> and <a href="https://theunitedstates.io/">theunitedstates.io</a>.</p>
+				</div>
 			</div>
 		</div>
 
