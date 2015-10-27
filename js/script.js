@@ -2,32 +2,21 @@ $('document').ready(function() {
 
 	// Load members into menu
 
-	loadMembersIntoMenu(1);
 
-	//Function loads members from API. The API has a max of 50 per page, so this loops 11 times to capture all members
+	var sunlightInfoAll = "https://congress.api.sunlightfoundation.com/legislators?in_office=true&apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=all&order=last_name_dsc";
 
-	function loadMembersIntoMenu (page_number) {
+	// gets all members in descending order 
 
-		var sunlightInfoAll = "https://congress.api.sunlightfoundation.com/legislators?in_office=true&apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=50&page="+page_number;
- 
-		$.getJSON(sunlightInfoAll, function(membersForSelect) {
-			$.each(membersForSelect.results, function(index) {	
-			 	if (membersForSelect.results[index].chamber === 'house') {
-							$('.member_selector').append('<option value=\"'+membersForSelect.results[index].bioguide_id+'\">'+membersForSelect.results[index].last_name+', '+membersForSelect.results[index].first_name+', '+membersForSelect.results[index].state+'-'+membersForSelect.results[index].district+'</option>');
-			 			} else {
-							$('.member_selector').append('<option value=\"'+membersForSelect.results[index].bioguide_id+'\">'+membersForSelect.results[index].last_name+', '+membersForSelect.results[index].first_name+', '+membersForSelect.results[index].state+'</option>');
-			 			}
-			 }); 
-
+	$.getJSON(sunlightInfoAll, function(membersForSelect) {
+		$.each(membersForSelect.results, function(index) {	
+		 	if (membersForSelect.results[index].chamber === 'house') {
+					$('.member_selector').append('<option value=\"'+membersForSelect.results[index].bioguide_id+'\">'+membersForSelect.results[index].last_name+', '+membersForSelect.results[index].first_name+', '+membersForSelect.results[index].state+'-'+membersForSelect.results[index].district+'</option>');
+	 			} else {
+					$('.member_selector').append('<option value=\"'+membersForSelect.results[index].bioguide_id+'\">'+membersForSelect.results[index].last_name+', '+membersForSelect.results[index].first_name+', '+membersForSelect.results[index].state+'</option>');
+	 			}
 		});
+	 }); 
 
-		if (page_number===11) {
-			return false; 
-		} else {
-			page_number=page_number+1;
-			loadMembersIntoMenu(page_number);
-		}
-	} // End of loading menu function
 
 
 	$('.member_selector').select2( {
@@ -91,7 +80,7 @@ $('document').ready(function() {
 			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 			 if (memberInfo.results[0].party === "D") {
-			 	$('body').css('background', 'none');
+			 	// $('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(15,56,255,.7)');
 			 } else if (memberInfo.results[0].party === "R") {
 			 	$('body').css('background', 'none');
@@ -114,14 +103,12 @@ $('document').ready(function() {
 
 		 		$.each(memberCommittee.results, function(index) {
 		 			if (!memberCommittee.results[index].subcommittee) {
-		 				console.log('Committee'+index);
 		 				$('#committees').append('<div id='+memberCommittee.results[index].committee_id+'>'+memberCommittee.results[index].name);	 			
 		 			} 
 		 		}); // Loop to load committee assignments
 
 		 		$.each(memberCommittee.results, function(index) {
 		 			if (memberCommittee.results[index].subcommittee) {
-		 				console.log(memberCommittee.results[index].committee_id+' '+index);
 		 				$('#'+memberCommittee.results[index].parent_committee_id).append('<div class="subcommittee">'+memberCommittee.results[index].name+' Subcommittee');
 		 			}
 		 		}); // Loop again to load subcommittee assignments and place under parent committee
