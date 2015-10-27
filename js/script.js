@@ -4,6 +4,7 @@ $('document').ready(function() {
 
 
 	var sunlightInfoAll = "https://congress.api.sunlightfoundation.com/legislators?in_office=true&apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=all&order=last_name_dsc";
+	var sunlightAllCommittees = "https://congress.api.sunlightfoundation.com/committees?apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=all";
 
 	// gets all members in descending order 
 
@@ -17,10 +18,19 @@ $('document').ready(function() {
 		});
 	 }); 
 
+	// load all committees in descending order
+
+	$.getJSON(sunlightAllCommittees, function(committeesForSelect) {
+		$.each(committeesForSelect.results, function(index) {	
+			if (!committeesForSelect.results[index].subcommittee) {
+				$('.member_selector').append('<option value=\"'+committeesForSelect.results[index].committee_id+'\">'+committeesForSelect.results[index].name+' Committee</option>');
+			}
+		});
+	 }); 
 
 
 	$('.member_selector').select2( {
-		placeholder: "Name, State, or District"
+		placeholder: "Name, State, District, Committee"
 	}); // Plugin for type-ahead 
 	
 	// listens for user selecting Member of Congress
@@ -80,7 +90,7 @@ $('document').ready(function() {
 			 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 			 if (memberInfo.results[0].party === "D") {
-			 	// $('body').css('background', 'none');
+			 	$('body').css('background', 'none');
 			 	$('body').css('background-color', 'rgba(15,56,255,.7)');
 			 } else if (memberInfo.results[0].party === "R") {
 			 	$('body').css('background', 'none');
