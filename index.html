@@ -36,7 +36,7 @@
 			<div class="container">
 				<div class="row"> <!--Header-->
 				  <div class="col-xs-6 col-sm-6 col-md-6 headerBlock">
- 				  	<img class="logo" src="images/capitolview-logo.png">
+ 				  	<img class="logo" src="images/capitolview-logo-white-400.png">
 				  	<h1 class="visuallyHidden">CapitolView.us</h1>
 				  </div>
 				  <div class="col-xs-offset-10 col-sm-offset-11 col-md-offset-11">
@@ -54,15 +54,15 @@
 				<div id="helpInfo" class="col-xs-12 col-sm-6 col-md-4">
 					<h3>Search Pointers</h3>
 						<ul>
-							<li>Type the first or last name, 2 letter state, or district (ex. ID-2)</li>
+							<li>Type the first or last name, 2 letter state, district (ex. ID-2), or committee name</li>
 							<li>Type a state's abbreviation to see all members from that state.</li>
 							<li>Type a state's abbreviation plus - to see all Congressional districts from that state (ex. 'KS-')</li>
-							<li>The background color changes with the Member's party affiliation.</li>
+							<li>The border color changes with the Member's party affiliation.</li>
 						</ul>
 				</div>
 				<div id="siteInfo" class="col-xs-12 col-sm-6 col-md-8">
 
-					<P>This site is designed to give you quick access to key information on members of Congress. Right now it is focused on contact information, photos, and the commmittees they serve on. We have plans to add other helpful information and are open to suggestions and code contributions at <a href="https://github.com/danbwhiting/mobile_congress">danbwhiting.github.io</a>.</p>
+					<P>This site is designed to give you quick access to key information on members of Congress and Committees. Right now it is focused on contact information, photos, and the commmittees they serve on. We have plans to add other helpful information and are open to suggestions and code contributions at <a href="https://github.com/danbwhiting/mobile_congress">danbwhiting.github.io</a>.</p>
 
 					<p>It is powered by data from the <a href="https://sunlightfoundation.com/api/">Sunlight Foundation</a> and <a href="https://theunitedstates.io/">theunitedstates.io</a>.</p>
 				</div>
@@ -85,7 +85,9 @@
 		<!--This displays all of the Member's info-->
   		<div class="container" id="initial_info">
   			<div class="row">
-				 <div class="col-xs-12 col-sm-5 col-md-4  contentWrapper hide_section" id="contactInfo">
+  				<div class="col-xs-11 col-sm-10 col-md-10 hide_section" id="committeeName"></div>
+  			<div class="row">
+				 <div class="col-xs-11 col-sm-5 col-md-4  contentWrapper hide_section" id="contactInfo">
 				 	<div id="memberName"></div>
   					<div id="memberDCOffice"></div>
   					<div id="memberDCPhone"></div>
@@ -98,8 +100,11 @@
   					<div id="memberBirthday"></div>
   					<div id="memberPhoto"></div>
 				</div>
-				<div class="col-xs-12 col-sm-7 col-md-7 committeeInfo contentWrapper hide_section" id="committees"></div>
-				<div class="col-xs-12 committeeMembership contentWrapper hide_section"></div>
+				<div class="col-xs-11 col-sm-7 col-md-7 committeeInfo contentWrapper hide_section" id="committees"></div>
+				<div class="col-xs-11 col-sm-5 col-md-5 committeeMembershipMajority contentWrapper hide_section">
+				</div>
+				<div class="col-xs-11 col-sm-5 col-md-5 committeeMembershipMinority contentWrapper hide_section">
+				</div>
 			</div> <!-- End of row with member photo-->
 
 		</div> <!--End of key info-->

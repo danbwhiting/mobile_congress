@@ -1,9 +1,15 @@
 body {
 	font-family: "Lato", sans-serif;
 	color: white;
-	background-color: rgba(75,136,203,1);
 	font-size: 2rem;
 	font-weight: 300;
+	background:
+		radial-gradient(black 15%, transparent 16%) 0 0,
+		radial-gradient(black 15%, transparent 16%) 8px 8px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
 }
 
 footer {
@@ -12,17 +18,11 @@ footer {
 }
 
 h1 {
-/*	background-image: url('../images/capitolview-logo-400.png');
-*/	font-weight: 300;
+	font-weight: 300;
 	margin-top: 5px;
 	font-size: 2.5rem;
 	color: white;
-/*	width: 400px;
-	height: 90px;
-*//*	background: no-repeat;
-	overflow: hidden;
-	white-space: nowrap;
-*/}
+}
 
 h1.visuallyHidden {
   border: 0;
@@ -39,12 +39,6 @@ img.logo {
 	display: inline-block;
 }
 
-/*.hide_text {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-*/
 
 h2 {
 	text-align: center;
@@ -81,11 +75,6 @@ h3 {
 .select2-hidden-accessible, .select2-results, .select2-search, .select2-search--dropdown {
 	color: black;
 }
-
- 
-/*div {
-	border: 1px solid white;
-}*/
 
 .main_body {
 	width: 960px;
@@ -129,20 +118,23 @@ h3 {
 #memberPhoto img {
 	border-radius: 10px;
 }
-/*.contact_info {
-	font-size: .7rem;
-	background-color: rgb(245,255,227);
-	color: black;
-}*/
+
 
 .contentWrapper {
-	background-color: rgb(245,255,227);
-	color: black;
-	padding: 10px;
-	border: 1px solid black;
+/*	background-color: rgb(245,255,227);
+*/	color: black;
+	background-color: white;
+	padding: 15px;
+	border: 3px solid;
 	border-radius: 10px;
 	margin: 15px;
 	font-size: 1.9rem;
+}
+
+#committeeName {
+	margin-left: 30px;
+	color: white;
+	text-align: center;
 }
 
 .hide_section {
@@ -158,13 +150,14 @@ h3 {
 
 h2 {
 	margin-top: 0px;
+	font-size: 3rem;
 }
 
 #info-btn {
 	border: none;
 	background: transparent;
 	margin: 20px;
-	color: rgb(245,255,227);
+	color: white;
 }
 
 .photoInfo {
@@ -191,7 +184,7 @@ h2 {
 	  width:100%;
 	  height:auto;
 	  margin:0 0 10px 0;
-	  background-color: rgb(245,255,227);
+	  background-color: white;
 	  color: black;
 	  font-family: "Lato", sans-serif;
 	  font-weight: 300;
@@ -274,6 +267,10 @@ a:visited {
 		height: auto;
 	}
 
+	h2 {
+		font-size: 2.5rem;
+	}
+
 }
 
 @media screen and (min-width: 642px) and (max-width: 899px) {
@@ -291,7 +288,11 @@ a:visited {
 		font-size: 8rem;
 	}
 
-	body {
+	.photoInfo {
+		display: none;
+	}
+
+/*	body {
 		background: url('../images/idaho_hot_springs.jpg');
 		background-repeat: none;
 		background-size: 100%;
@@ -299,5 +300,5 @@ a:visited {
 		height: 100%;
 		width: 100%;
 	}
-
+*/
 }
