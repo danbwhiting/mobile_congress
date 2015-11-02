@@ -2,7 +2,6 @@ $('document').ready(function() {
 
 	// Load members into menu
 
-
 	var sunlightInfoAll = "https://congress.api.sunlightfoundation.com/legislators?in_office=true&apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=all&order=last_name_dsc";
 	var sunlightAllCommittees = "https://congress.api.sunlightfoundation.com/committees?apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=all&";
 
@@ -98,15 +97,15 @@ $('document').ready(function() {
 				 $('#memberBirthday').html("Birthday: "+memberInfo.results[0].birthday);
 
 				 if (memberInfo.results[0].party === "D") {
-				 	$('.contentWrapper').css('border', '3px solid rgb(15,56,255');
+				 	$('.contentWrapper').css('border', '4px solid rgb(15,56,255');
 				 	// $('body').css('background', 'none');
 				 	// $('body').css('background-color', 'rgba(15,56,255,.7)');
 				 } else if (memberInfo.results[0].party === "R") {
-				 	$('.contentWrapper').css('border', '3px solid rgb(255,22,54');
+				 	$('.contentWrapper').css('border', '4px solid rgb(255,22,54');
 				 	// $('body').css('background', 'none');
 				 	// $('body').css('background-color', 'rgba(255,22,54,1)');
 				 } else {
-				 	$('.contentWrapper').css('border', '3px solid rgb(164,37,232');
+				 	$('.contentWrapper').css('border', '4px solid rgb(164,37,232');
 				 	// $('body').css('background', 'none');
 				 	// $('body').css('background-color', 'rgba(164,37,232,.7)');
 				 } // Change the background color depending on their party
@@ -145,7 +144,7 @@ $('document').ready(function() {
 		 	$('#contactInfo').addClass('hide_section');
 		 	$('#committees').addClass('hide_section');
 
-		 	$('contentWrapper').css('border', 'border: 3px solid black');
+		 	$('contentWrapper').css('border', 'border: 4px solid black');
 
 
 			var sunlightCommitteeMembers = "https://congress.api.sunlightfoundation.com/committees?committee_id="+memberID+"&apikey=7845a468f0ee48eabda5d401e834fcd0&per_page=all&order=members.side,members.rank&fields=members";

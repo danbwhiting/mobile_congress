@@ -125,9 +125,8 @@ h3 {
 */	color: black;
 	background-color: white;
 	padding: 15px;
-	border: 3px solid;
 	border-radius: 10px;
-	margin: 15px;
+	margin: 15px ;
 	font-size: 1.9rem;
 }
 
@@ -239,9 +238,9 @@ a:visited {
 /* Phones and portrait tables */
 
 @media screen and (max-width: 641px) {
-	.container {
+	/*.container {
 		border: none;
-	}
+	}*/
 
 	#memberPhoto {
 		padding-top: 5px;
