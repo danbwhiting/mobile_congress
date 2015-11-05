@@ -126,8 +126,12 @@ h3 {
 	background-color: white;
 	padding: 15px;
 	border-radius: 10px;
-	margin: 20px ;
+	margin: 15px ;
 	font-size: 1.9rem;
+}
+
+.col {
+	padding: 30px;
 }
 
 #committeeName {
