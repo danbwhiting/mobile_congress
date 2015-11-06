@@ -135,6 +135,7 @@ $('document').ready(function() {
 // Display the help and info slide down section
 $('.glyphicon-info-sign').on('click', function() {
       $('.dropDownWrap').slideToggle();
+      $('.photoInfo').addClass('hide_section');
  });
 
 
