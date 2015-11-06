@@ -41,16 +41,16 @@ $('document').ready(function() {
 	$('.member_selector').change(function(e) {
 		var memberID = $(this).val(); // get value user selected
 
+		$('.photoInfo').addClass('hide_section'); // Remove the photo info section
+
 		if (memberID.length > 6 || memberID.length===5) { //If longer than 5, not member, otherwise a Committee
 
-			console.log('got into the first check');
 
 			// Default these to not display 
 			$('#memberTwitter').addClass('hide_section');
 			$('#memberFacebook').addClass('hide_section');
 			$('#memberYouTube').addClass('hide_section');
 			$('#memberTermEnding').addClass('hide_section');
-			$('.photoInfo').addClass('hide_section');
 
 			//Hide all of the Committee fields
 			$('.committeeMembershipMajority').addClass('hide_section');
@@ -221,4 +221,7 @@ function displayMemberInfo (memberID, sunlightInfo, sunlightCommittees) {
 	 		}); // Loop again to load subcommittee assignments and place under parent committee
 
 	 }); // End of committee data
+
+	 	// $('#map').html('<iframe width=\"425\" height=\"300\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://www.govtrack.us/congress/members/embed/mapframe?state=md&district=4&bounds=-77.004,38.958,-76.825,38.889\"></iframe>');
+	 	// $('#map').removeClass('hide_section');
 }
